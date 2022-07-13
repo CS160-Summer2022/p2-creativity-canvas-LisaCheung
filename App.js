@@ -42,8 +42,9 @@ app.get('/a', function (req, res) {
 
 //run this server by entering "node App.js" using your command line. 
 app.listen(port, () => {
-     console.log(`Server is running on http://${host}:${port}`);
-   });
+    console.log(`Server is running on http://${host}:${port}`);
+});
+
 
 
 

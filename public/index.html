@@ -72,6 +72,9 @@
               <br>
               <label for="quantity3"><b>enter max radius for blob (between 50 and 100):</b></label>
               <input type="number" id="quantity3" name="quantity3" min="50" max="100">
+
+              <label for="temp"><b>center x-position:</b></label>
+              <label for="temp2"><b>center y-position:</b></label>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -95,10 +98,10 @@
       <span class="material-symbols-outlined">circle</span>
     </button>
 
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary" id="random-blob">
       1. generate random blob
     </button>
-    <button type="button" class="btn btn-primary">
+    <button type="button" class="btn btn-primary" id="fill-gradient">
       2. add random distribution color gradient
     </button>
     <button type="button" class="btn btn-primary">
@@ -108,7 +111,7 @@
     <!-- I used a simple line break here, but you might want to consider using a more sophisticated layout/formatting solution (e.g. Bootstrap rows and columns), especially if there's a lot of elements you want to cleanly organize, position, and format in your app. -->
 
 
-
+    <br>
     <canvas id="my-canvas" width="800" height="600"
       style="border:4px solid #000000;background-color:white; border-radius: 25px;"></canvas>
     <!-- our Canvas object -->

@@ -110,10 +110,16 @@ $("#iterate").on('click', function (e) {
     }
 });
 
-$("#delete").on('click', function (e) {
+/*$("#delete").on('click', function (e) {
     var context = document.getElementById('my-canvas').getContext('2d');
+    context.fillStyle = "white";
+    context.fillRect(0, 0, canvas_width, canvas_height);
     context.clearRect(0, 0, canvas_width, canvas_height);
-});
+}); 
+
+<button type="button" class="btn btn-danger" id="delete">
+      <span class="material-symbols-outlined">delete</span>
+    </button>*/
 
 
 

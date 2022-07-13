@@ -5,14 +5,14 @@ var path;
 var currentColor = 'black'
 var currentWidth = 5
 
-tool.onMouseDown = function(event) { //This code in this function is called whenever the mouse is clicked.
+tool.onMouseDown = function (event) { //This code in this function is called whenever the mouse is clicked.
     path = new Path();     // Create a new path each time.
     path.add(event.point);
     path.strokeColor = currentColor;
     path.strokeWidth = currentWidth;
     console.log(event.point); //this commands log to the Console the coordinates of the mouse click. Feel free to delete it! 
 }
-tool.onMouseDrag = function(event) {
+tool.onMouseDrag = function (event) {
     path.add(event.point); //Add points to the path as the user drags their mouse.
 }
 
@@ -28,3 +28,31 @@ $('#eraser').on('click', function (e) { //jquery button click code for our erase
     currentColor = 'white';
     currentWidth = 20;
 })
+
+$('form').on(
+    'submit', function (event) {
+        event.preventDefault();
+        var val = $("#quantity1").val();
+        console.log("hello");
+        console.log(val);
+    }
+)
+
+var color1 = $("#colorpicker1").val();
+var color3 = $("#colorpicker2").val();
+var color3 = $("#colorpicker3").val();
+var strokecol = $("#strokecolor").val();
+$('#submitfilter').on('click', function (e) { //jquery button click code for our eraser button.
+    var val = $("#colorpicker1").val();
+    console.log("hello");
+    console.log(val);
+
+    color1 = $("#colorpicker1").val();
+    color3 = $("#colorpicker2").val();
+    color3 = $("#colorpicker3").val();
+    strokecol = $("#strokecolor").val();
+    console.log(strokecol);
+
+
+})
+

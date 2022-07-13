@@ -98,4 +98,22 @@ $("#fill-gradient").on('click', function (e) {
 
 });
 
+var canvas_width = 800;
+var canvas_height = 600;
+$("#iterate").on('click', function (e) {
+    var copy;
+    for (var i = 100; i < canvas_width; i += 200) {
+        for (var j = 100; j < canvas_height; j += 200) {
+            copy = path.clone();
+            copy.position = new Point(i, j);
+        }
+    }
+});
+
+$("#delete").on('click', function (e) {
+    var context = document.getElementById('my-canvas').getContext('2d');
+    context.clearRect(0, 0, canvas_width, canvas_height);
+});
+
+
 

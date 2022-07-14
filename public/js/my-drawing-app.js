@@ -20,8 +20,9 @@ $('#default').on('click', function (e) { //jquery click event code for our "penc
     currentColor = 'black';  //change the color to black
     currentWidth = 5;       //change the width to 5
 })
-$('#thick-green').on('click', function (e) { //jquery button click code for our "green paint" button.
-    currentColor = 'green';
+$('#multicolor').on('click', function (e) { //jquery button click code for our "green paint" button.
+    //currentColor = 'green';
+    currentColor = $("#paintcolor").val();
     currentWidth = 15;
 })
 $('#eraser').on('click', function (e) { //jquery button click code for our eraser button.
@@ -42,6 +43,10 @@ var color1 = $("#colorpicker1").val();
 var color2 = $("#colorpicker2").val();
 var color3 = $("#colorpicker3").val();
 var strokecol = $("#strokecolor").val();
+var strokewidth = $("#stroke-width").val();
+var num_path = $("#quantity1").val();
+var max_rad = 100;
+var min_rad = 50;
 $('#submitfilter').on('click', function (e) { //jquery button click code for our eraser button.
     var val = $("#colorpicker1").val();
     console.log("hello");
@@ -50,22 +55,27 @@ $('#submitfilter').on('click', function (e) { //jquery button click code for our
     color3 = $("#colorpicker2").val();
     color3 = $("#colorpicker3").val();
     strokecol = $("#strokecolor").val();
+    strokewidth = $("#stroke-width").val();
+    num_path = $("#quantity1").val();
+    max_rad = $("#quantity2").val();
+    min_rad = $("#quantity3").val();
     console.log(strokecol);
 })
 
 var path;
 $("#random-blob").on('click', function (e) {
-    var rand_num_pts = 10; //get user input 
+    var rand_num_pts = num_path; //get user input 
     var center = new Point(100, 100);
     path = new Path();
-    path.strokeColor = 'black';//get user input 
+    path.strokeColor = strokecol;//get user input 
+    path.strokeWidth = strokewidth;
     path.add(center);
     path.closed = true;
     var rotate;
     var rand_radius;
     for (var i = 0; i < rand_num_pts; i++) {
         rotate = (360 / rand_num_pts) * i;
-        rand_radius = Math.floor(Math.random() * (100 - 50) + 50); //between 50 and 100 //get user input 
+        rand_radius = Math.floor(Math.random() * (max_rad - min_rad) + min_rad); //between 50 and 100 //get user input 
         path.add(center + new Point({
             length: rand_radius,
             angle: rotate

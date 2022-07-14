@@ -60,21 +60,19 @@
               <label for="strokecolor"><b>enter stroke color:</b></label>
               <input type="color" id="strokecolor" value="#555555">
               <br>
-              <label for="quantity5"><b>enter stroke width:</b></label>
-              <input type="number" id="quantity5" name="quantity" min="10" max="20">
+              <label for="stroke-width"><b>enter stroke width:</b></label>
+              <input type="number" id="stroke-width" name="quantity" min="10" max="20">
               <br>
               <label for="quantity1"><b>enter num path segments for generating random blob (between 10 and
                   50):</b></label>
               <input type="number" id="quantity1" name="quantity" min="10" max="50">
               <br>
-              <label for="quantity2"><b>enter min radius for blob (between 50 and 100):</b></label>
+              <label for="quantity2"><b>enter max radius for blob (between 50 and 100):</b></label>
               <input type="number" id="quantity2" name="quantity2" min="50" max="100">
               <br>
-              <label for="quantity3"><b>enter max radius for blob (between 50 and 100):</b></label>
+              <label for="quantity3"><b>enter min radius for blob (between 50 and 100):</b></label>
               <input type="number" id="quantity3" name="quantity3" min="50" max="100">
 
-              <label for="temp"><b>center x-position:</b></label>
-              <label for="temp2"><b>center y-position:</b></label>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -90,8 +88,10 @@
       <span class="material-symbols-outlined"> edit</span>
     </button>
 
-    <button type="button" class="btn btn-success" id="thick-green">
-      <span class="material-symbols-outlined">format_paint</span>
+    <button type="button" class="btn" id="multicolor">
+
+      <label for="paintcolor"><span class="material-symbols-outlined">format_paint</span></label>
+      <input type="color" id="paintcolor" value="#555555">
     </button>
 
     <button type="button" class="btn" id="eraser">
